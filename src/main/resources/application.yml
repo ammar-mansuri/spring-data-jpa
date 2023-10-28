@@ -1,0 +1,16 @@
+
+
+spring:
+  datasource:
+    username:
+    password:
+    url: jdbc:postgresql://localhost:5432/spring-data-jpa
+  jpa:
+    hibernate:
+      # This property will drop everything once the application shuts down
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
