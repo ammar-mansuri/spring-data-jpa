@@ -1,5 +1,3 @@
-
-
 spring:
   datasource:
     username:
@@ -8,7 +6,8 @@ spring:
   jpa:
     hibernate:
       # This property will drop everything once the application shuts down
-      ddl-auto: create-drop
+      # Is only set for dev/testing env
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
