@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDateTime;
 import java.util.Random;
+import java.util.UUID;
 
 @Configuration
 public class FakerConfig {
@@ -52,6 +53,8 @@ public class FakerConfig {
             student.setStudentIdCard(studentIdCard);
 
             studentRepository.save(student);
+
+            studentIdCardRepository.deleteById(UUID.fromString("6b97fd99-47eb-4f09-b719-686ac64cac5a"));
         };
     }
 }

@@ -29,12 +29,7 @@ public interface StudentRepository extends JpaRepository<Student, UUID> {
     @Transactional
     @Modifying
     @Query("DELETE FROM Student u WHERE u.id = ?1")
-    int deleteStudentById(Long id);
-
-    @Transactional
-    @Modifying
-    @Query("DELETE FROM Student u WHERE u.id = ?1")
-    int updateStudentById(Long id);
+    int deleteStudentById(UUID id);
 
 
 }
