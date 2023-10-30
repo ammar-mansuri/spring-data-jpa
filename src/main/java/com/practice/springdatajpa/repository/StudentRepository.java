@@ -25,11 +25,5 @@ public interface StudentRepository extends JpaRepository<Student, UUID> {
     @Query(value = "SELECT * FROM student WHERE first_name = :firstName AND age >= :age", nativeQuery = true)
     List<Student> selectStudentWhereFirstNameAndAgeGreaterOrEqualNative(@Param("firstName") String firstName,
                                                                         @Param("age") Integer age);
-
-    @Transactional
-    @Modifying
-    @Query("DELETE FROM Student u WHERE u.id = ?1")
-    int deleteStudentById(UUID id);
-
-
+    
 }
