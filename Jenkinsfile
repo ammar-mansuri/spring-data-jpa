@@ -10,18 +10,20 @@ pipeline {
             steps {
                 echo 'Building..'
                 withMaven{
-                 sh 'mvn -B -DskipTests clean package'
+                 sh 'mvn clean compile'
                 }
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'mvn test'
             }
         }
-        stage('Deploy') {
+        stage('Package') {
             steps {
-                echo 'Deploying....'
+                echo 'Packaging..'
+                sh 'mvn package'
             }
         }
     }
