@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Random;
 
 @SpringBootTest
-public class StudentRepositoryTests {
+public class StudentRepositoryTest {
 
     @Autowired
     StudentRepository studentRepository;
