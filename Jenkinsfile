@@ -2,18 +2,10 @@ pipeline {
     agent any
 
     tools {
+        maven 'M3'
         jdk 'openjdk-11'
     }
     stages {
-        stage('Example') {
-            steps {
-                sh '''
-                    env | grep -e PATH -e JAVA_HOME
-                    which JAVA
-                    java -version
-                '''
-            }
-        }
 
         stage('Build') {
             steps {
